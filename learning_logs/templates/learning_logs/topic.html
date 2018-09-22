@@ -1,0 +1,20 @@
+{% extends 'learning_logs\base.html' %}
+
+{% block content%}
+<p>Topic:{{topic}}</p>
+<ul>
+{% for entry in entries %}
+<li>{{ entry }}</li>
+{% endfor %}
+<ul>
+{% endblock content %}
+
+
+<!--
+<p>Topics</p>
+<ul>
+{% for topic in topics %}
+<li>{{ topic }}</li>
+{% endfor %}
+<ul>
+-->

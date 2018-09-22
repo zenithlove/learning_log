@@ -1,0 +1,26 @@
+{% extends "learning_logs\base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+<h2> Log in to your account </h2>
+{% endblock header %}
+
+{% block content%}
+
+<form action = "{% url 'users:login' %}" method = 'POST'>
+    {% csrf_token%}
+    <!--{{form.as_p}} -->
+    <label for ="username"> username: </label>
+    <input type = "text" name="username" value="" id="username"/>
+    <span style = "color:red;"> {{error_msg}} </span>
+    <br/>
+    <label for = "password"> password: </label>
+    <input type = "text" name="password" id = "password" value=""/>
+    <br/>
+    <!--<button name="submit"> login</button>-->
+
+    {% buttons %}
+    <button name ="submit" class = "btn btn-primary"> log in </button>
+    {% endbuttons %}
+</form>
+{% endblock content%}

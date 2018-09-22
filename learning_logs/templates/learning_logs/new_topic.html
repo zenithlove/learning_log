@@ -1,0 +1,21 @@
+{% extends 'learning_logs\base.html' %}
+
+{% block content%}
+<p>Add a new topic:</p>
+
+   <form  method = post>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button name="submit"> add topic </button>
+    </form>
+{% endblock content %}
+
+
+<!--
+<p>Topics</p>
+<ul>
+{% for topic in topics %}
+<li>{{ topic }}</li>
+{% endfor %}
+<ul>
+-->
